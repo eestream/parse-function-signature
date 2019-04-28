@@ -5,8 +5,8 @@
     print $0
     if($0 ~ /\s*(\w*)\s+(\w*)\s*\((\s*((\w+\s+)?(\w+)\s+(\w+))?,?)*\);$/)#if this line is a function signature
     {
-        ret = gensub(/\s*(\w*)\s+(\w*)\s*\((\s*((\w+\s+)?(\w+)\s+(\w+))?,?)*\);$/, "\\1", "g", $0);
-        function_name = gensub(/\s*(\w*)\s+(\w*)\s*\((\s*((\w+\s+)?(\w+)\s+(\w+))?,?)*\);$/, "\\2", "g", $0);
+        ret =           gensub(/\s*(\w*)\s+(\w*)\s*\((.*)\);$/, "\\1", "g", $0);
+        function_name = gensub(/\s*(\w*)\s+(\w*)\s*\((.*)\);$/, "\\2", "g", $0);
         allparameters = gensub(/\s*(\w*)\s+(\w*)\s*\((.*)\);$/, "\\3", "g", $0);
 
 
